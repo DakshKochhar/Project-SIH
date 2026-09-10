@@ -1,0 +1,792 @@
+/* =================================
+   FLOOD PREDICTION PAGE
+================================= */
+
+.prediction-page {
+  margin-left: 230px;
+  padding: 95px 30px 40px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 75% 10%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    #020617;
+
+  color: #e2e8f0;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.prediction-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.prediction-header h1 {
+  margin-bottom: 6px;
+
+  color: #f8fafc;
+  font-size: 26px;
+}
+
+.prediction-header p {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.prediction-location {
+  padding: 9px 14px;
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 8px;
+
+  background: rgba(15, 23, 42, 0.7);
+
+  color: #60a5fa;
+  font-size: 11px;
+}
+
+
+/* =================================
+   OVERVIEW
+================================= */
+
+.prediction-overview {
+  display: grid;
+
+  grid-template-columns: 1.15fr 1fr;
+
+  gap: 18px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =================================
+   GAUGE CARD
+================================= */
+
+.prediction-gauge-card,
+.prediction-factors,
+.timeline-panel,
+.risk-zones-panel,
+.prediction-recommendation {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.95),
+      rgba(8, 15, 30, 0.92)
+    );
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.prediction-gauge-card {
+  padding: 20px;
+}
+
+.gauge-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.gauge-header > div span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #64748b;
+  font-size: 10px;
+}
+
+.gauge-header h2 {
+  color: #f8fafc;
+  font-size: 20px;
+}
+
+.live-status {
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  background: rgba(34, 211, 238, 0.08);
+
+  color: #22d3ee;
+
+  font-size: 8px;
+}
+
+
+/* =================================
+   RISK GAUGE
+================================= */
+
+.risk-gauge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px 0;
+}
+
+.gauge-circle {
+  width: 175px;
+  height: 175px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 13px solid rgba(59, 130, 246, 0.14);
+
+  box-shadow:
+    0 0 0 7px rgba(37, 99, 235, 0.04),
+    0 0 35px rgba(37, 99, 235, 0.12);
+}
+
+.gauge-circle strong {
+  color: #60a5fa;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.gauge-circle span {
+  margin-top: 7px;
+
+  color: #64748b;
+  font-size: 9px;
+}
+
+.risk-message {
+  padding: 11px 13px;
+
+  border-left: 2px solid #3b82f6;
+
+  background: rgba(59, 130, 246, 0.06);
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+
+/* =================================
+   PREDICTION FACTORS
+================================= */
+
+.prediction-factors {
+  padding: 20px;
+}
+
+.prediction-factors h2 {
+  margin-bottom: 20px;
+
+  color: #f8fafc;
+  font-size: 14px;
+}
+
+.factor-item {
+  margin-bottom: 18px;
+}
+
+.factor-item:last-child {
+  margin-bottom: 0;
+}
+
+.factor-item > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+}
+
+.factor-item span {
+  color: #64748b;
+  font-size: 9px;
+}
+
+.factor-item strong {
+  color: #cbd5e1;
+  font-size: 10px;
+}
+
+.factor-bar {
+  width: 100%;
+  height: 6px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.factor-bar span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #22d3ee
+    );
+}
+
+
+/* =================================
+   PANEL HEADING
+================================= */
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.panel-heading h2 {
+  margin-bottom: 4px;
+
+  color: #f8fafc;
+  font-size: 14px;
+}
+
+.panel-heading p {
+  color: #64748b;
+  font-size: 9px;
+}
+
+.prediction-badge {
+  padding: 6px 9px;
+
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 6px;
+
+  background: rgba(59, 130, 246, 0.08);
+
+  color: #60a5fa;
+
+  font-size: 8px;
+}
+
+
+/* =================================
+   PREDICTION TIMELINE
+================================= */
+
+.timeline-panel {
+  margin-bottom: 20px;
+}
+
+.prediction-timeline {
+  display: flex;
+  align-items: center;
+
+  padding: 35px 30px 30px;
+}
+
+.prediction-point {
+  min-width: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.prediction-point .time {
+  margin-bottom: 12px;
+
+  color: #64748b;
+  font-size: 9px;
+}
+
+.point {
+  width: 13px;
+  height: 13px;
+
+  margin-bottom: 9px;
+
+  border-radius: 50%;
+
+  border: 3px solid #020617;
+}
+
+.critical-point {
+  background: #ef4444;
+
+  box-shadow:
+    0 0 12px rgba(239, 68, 68, 0.5);
+}
+
+.high-point {
+  background: #f97316;
+
+  box-shadow:
+    0 0 12px rgba(249, 115, 22, 0.4);
+}
+
+.prediction-point strong {
+  color: #e2e8f0;
+  font-size: 12px;
+}
+
+.prediction-point small {
+  margin-top: 3px;
+
+  color: #64748b;
+  font-size: 8px;
+}
+
+.prediction-line {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.35),
+      rgba(59, 130, 246, 0.08)
+    );
+}
+
+
+/* =================================
+   RISK ZONES
+================================= */
+
+.risk-zones-panel {
+  margin-bottom: 20px;
+}
+
+.risk-zone-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+
+  padding: 18px;
+}
+
+.zone-card {
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition: 0.25s;
+}
+
+.zone-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(59, 130, 246, 0.2);
+
+  background: rgba(59, 130, 246, 0.04);
+}
+
+.zone-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+}
+
+.zone-icon {
+  font-size: 18px;
+}
+
+.zone-level {
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  font-size: 7px;
+  font-weight: 600;
+}
+
+.zone-level.critical {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+.zone-level.high {
+  background: rgba(249, 115, 22, 0.1);
+  color: #fb923c;
+}
+
+.zone-level.medium {
+  background: rgba(234, 179, 8, 0.1);
+  color: #facc15;
+}
+
+.zone-card h3 {
+  margin-bottom: 7px;
+
+  color: #cbd5e1;
+  font-size: 11px;
+}
+
+.zone-card p {
+  min-height: 34px;
+
+  color: #64748b;
+
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.zone-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 12px;
+  padding-top: 10px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.zone-bottom span {
+  color: #475569;
+  font-size: 8px;
+}
+
+.zone-bottom strong {
+  color: #60a5fa;
+  font-size: 11px;
+}
+
+
+/* =================================
+   RECOMMENDATION
+================================= */
+
+.prediction-recommendation {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px 18px;
+
+  border-left: 2px solid #3b82f6;
+}
+
+.recommendation-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: rgba(59, 130, 246, 0.1);
+
+  color: #60a5fa;
+
+  font-size: 17px;
+}
+
+.prediction-recommendation h3 {
+  margin-bottom: 4px;
+
+  color: #cbd5e1;
+  font-size: 11px;
+}
+
+.prediction-recommendation p {
+  color: #64748b;
+
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1100px) {
+
+  .prediction-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-zone-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .prediction-page {
+    margin-left: 0;
+
+    padding: 90px 18px 30px;
+  }
+
+  .prediction-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .prediction-timeline {
+    overflow-x: auto;
+
+    min-width: 650px;
+  }
+
+  .timeline-panel {
+    overflow-x: auto;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .risk-zone-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-header h1 {
+    font-size: 22px;
+  }
+
+  .gauge-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .gauge-circle strong {
+    font-size: 36px;
+  }
+
+}
+/* =========================================
+   LIGHT THEME - FLOOD PREDICTION
+   ========================================= */
+
+body.light-theme .prediction-page {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+body.light-theme .prediction-page h1,
+body.light-theme .prediction-page h2,
+body.light-theme .prediction-page h3 {
+  color: #0f172a;
+}
+
+body.light-theme .prediction-page p,
+body.light-theme .prediction-page span,
+body.light-theme .prediction-page small {
+  color: #64748b;
+}
+
+/* Header */
+
+body.light-theme .prediction-location {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Prediction overview */
+
+body.light-theme .prediction-gauge-card,
+body.light-theme .prediction-factors {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .gauge-header span {
+  color: #64748b;
+}
+
+body.light-theme .gauge-header h2 {
+  color: #dc2626;
+}
+
+body.light-theme .risk-message {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Risk gauge */
+
+body.light-theme .gauge-circle {
+  background: #ffffff;
+  border-color: #fecaca;
+  box-shadow: 0 0 0 8px #fef2f2;
+}
+
+body.light-theme .gauge-circle strong {
+  color: #dc2626;
+}
+
+body.light-theme .gauge-circle span {
+  color: #64748b;
+}
+
+/* Prediction factors */
+
+body.light-theme .prediction-factors h2 {
+  color: #0f172a;
+}
+
+body.light-theme .factor-item > div:first-child span {
+  color: #64748b;
+}
+
+body.light-theme .factor-item strong {
+  color: #0f172a;
+}
+
+body.light-theme .factor-bar {
+  background: #e2e8f0;
+}
+
+/* Timeline */
+
+body.light-theme .timeline-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .timeline-panel .panel-heading h2 {
+  color: #0f172a;
+}
+
+body.light-theme .timeline-panel .panel-heading p {
+  color: #64748b;
+}
+
+body.light-theme .prediction-badge {
+  background: #eff6ff;
+  border-color: #dbeafe;
+  color: #2563eb;
+}
+
+body.light-theme .prediction-point .time {
+  color: #64748b;
+}
+
+body.light-theme .prediction-point strong {
+  color: #0f172a;
+}
+
+body.light-theme .prediction-point small {
+  color: #64748b;
+}
+
+body.light-theme .prediction-line {
+  background: #cbd5e1;
+}
+
+/* Risk zones */
+
+body.light-theme .risk-zones-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .risk-zones-panel .panel-heading h2 {
+  color: #0f172a;
+}
+
+body.light-theme .risk-zones-panel .panel-heading p {
+  color: #64748b;
+}
+
+body.light-theme .zone-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+
+body.light-theme .zone-card h3 {
+  color: #0f172a;
+}
+
+body.light-theme .zone-card p {
+  color: #64748b;
+}
+
+body.light-theme .zone-bottom {
+  border-top-color: #e2e8f0;
+}
+
+body.light-theme .zone-bottom span {
+  color: #64748b;
+}
+
+body.light-theme .zone-bottom strong {
+  color: #0f172a;
+}
+
+/* Recommendation */
+
+body.light-theme .prediction-recommendation {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #78350f;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+body.light-theme .prediction-recommendation h3 {
+  color: #92400e;
+}
+
+body.light-theme .prediction-recommendation p {
+  color: #92400e;
+}

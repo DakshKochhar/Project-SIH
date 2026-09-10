@@ -1,0 +1,681 @@
+/* ================================
+   RAINFALL PAGE
+================================ */
+
+.rainfall-page {
+  margin-left: 230px;
+  padding: 95px 30px 40px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 75% 10%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    #020617;
+
+  color: #e2e8f0;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.rainfall-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.rainfall-header h1 {
+  font-size: 26px;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.rainfall-header p {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.rainfall-location {
+  padding: 9px 14px;
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 8px;
+
+  background: rgba(15, 23, 42, 0.7);
+
+  color: #60a5fa;
+  font-size: 11px;
+}
+
+
+/* ================================
+   STAT CARDS
+================================ */
+
+.rainfall-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.rainfall-card {
+  min-height: 115px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.95),
+      rgba(8, 15, 30, 0.9)
+    );
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+
+  transition: 0.25s;
+}
+
+.rainfall-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(59, 130, 246, 0.25);
+
+  box-shadow:
+    0 12px 35px rgba(37, 99, 235, 0.08);
+}
+
+.rainfall-card span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #64748b;
+  font-size: 10px;
+}
+
+.rainfall-card strong {
+  display: block;
+
+  color: #f8fafc;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.rainfall-card strong small {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.rainfall-card p {
+  margin-top: 7px;
+
+  color: #60a5fa;
+  font-size: 10px;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.rainfall-content {
+  display: grid;
+
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 20px;
+}
+
+
+/* ================================
+   COMMON PANELS
+================================ */
+
+.rainfall-chart-panel,
+.forecast-panel,
+.stations-panel {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.94),
+      rgba(8, 15, 30, 0.92)
+    );
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+/* ================================
+   PANEL HEADING
+================================ */
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.panel-heading h2 {
+  color: #f8fafc;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.panel-heading p {
+  color: #64748b;
+  font-size: 9px;
+}
+
+.panel-heading select {
+  padding: 7px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #0f172a;
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+/* ================================
+   RAINFALL CHART
+================================ */
+
+.rain-chart {
+  display: flex;
+
+  height: 290px;
+
+  padding: 25px 20px 15px;
+}
+
+.chart-y {
+  width: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-bottom: 25px;
+
+  color: #475569;
+
+  font-size: 8px;
+
+  text-align: right;
+}
+
+.chart-area {
+  position: relative;
+
+  flex: 1;
+
+  height: 100%;
+}
+
+.chart-grid {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 25px;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(148, 163, 184, 0.08) 0,
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px,
+      transparent 20%
+    );
+}
+
+
+/* ================================
+   CHART BARS
+================================ */
+
+.bars {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 25px;
+  top: 5px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  gap: 20px;
+}
+
+.bar {
+  position: relative;
+
+  width: 45px;
+
+  border-radius: 5px 5px 2px 2px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(37, 99, 235, 0.35),
+      rgba(59, 130, 246, 0.85)
+    );
+
+  box-shadow:
+    0 0 15px rgba(37, 99, 235, 0.12);
+
+  transition: 0.25s;
+}
+
+.bar:hover {
+  background:
+    linear-gradient(
+      to top,
+      rgba(37, 99, 235, 0.55),
+      rgba(96, 165, 250, 0.95)
+    );
+}
+
+.active-bar {
+  background:
+    linear-gradient(
+      to top,
+      rgba(34, 211, 238, 0.45),
+      rgba(59, 130, 246, 1)
+    );
+
+  box-shadow:
+    0 0 22px rgba(34, 211, 238, 0.2);
+}
+
+.bar span {
+  position: absolute;
+
+  top: -17px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+
+/* ================================
+   CHART X AXIS
+================================ */
+
+.chart-x {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-around;
+
+  color: #475569;
+
+  font-size: 8px;
+}
+
+
+/* ================================
+   FORECAST PANEL
+================================ */
+
+.forecast-panel {
+  padding-bottom: 12px;
+}
+
+.forecast-panel h2 {
+  padding: 18px 18px 0;
+
+  color: #f8fafc;
+  font-size: 14px;
+}
+
+.forecast-subtitle {
+  padding: 5px 18px 14px;
+
+  color: #64748b;
+  font-size: 9px;
+}
+
+
+/* ================================
+   FORECAST ITEMS
+================================ */
+
+.forecast-item {
+  display: grid;
+
+  grid-template-columns: 1fr auto auto;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 0 12px 7px;
+
+  padding: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.forecast-item span {
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.forecast-item strong {
+  color: #e2e8f0;
+  font-size: 11px;
+}
+
+.forecast-item b {
+  min-width: 55px;
+
+  padding: 4px 6px;
+
+  border-radius: 5px;
+
+  background: rgba(59, 130, 246, 0.1);
+
+  color: #60a5fa;
+
+  font-size: 8px;
+
+  text-align: center;
+}
+
+
+/* ================================
+   STATIONS PANEL
+================================ */
+
+.stations-panel {
+  overflow: hidden;
+}
+
+.station-row {
+  display: grid;
+
+  grid-template-columns:
+    0.8fr
+    1.6fr
+    1fr
+    0.8fr;
+
+  align-items: center;
+
+  padding: 13px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+.station-row:last-child {
+  border-bottom: none;
+}
+
+.station-header {
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #475569;
+
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.station-row b {
+  width: fit-content;
+
+  padding: 4px 8px;
+
+  border-radius: 5px;
+
+  background: rgba(59, 130, 246, 0.1);
+
+  color: #60a5fa;
+
+  font-size: 8px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+  .rainfall-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rainfall-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .rainfall-page {
+    margin-left: 0;
+    padding: 90px 18px 30px;
+  }
+
+  .rainfall-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rain-chart {
+    height: 250px;
+  }
+}
+
+
+@media (max-width: 550px) {
+  .rainfall-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .rainfall-header h1 {
+    font-size: 22px;
+  }
+
+  .station-row {
+    grid-template-columns:
+      0.7fr
+      1.3fr
+      1fr
+      0.8fr;
+
+    padding: 12px 10px;
+
+    font-size: 8px;
+  }
+
+  .bar {
+    width: 28px;
+  }
+
+  .bars {
+    gap: 8px;
+    left: 5px;
+    right: 5px;
+  }
+
+  .chart-x {
+    left: 5px;
+    right: 5px;
+  }
+}
+/* =========================================
+   LIGHT THEME - RAINFALL
+   ========================================= */
+
+body.light-theme .rainfall-page {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+body.light-theme .rainfall-page h1,
+body.light-theme .rainfall-page h2,
+body.light-theme .rainfall-page h3 {
+  color: #0f172a;
+}
+
+body.light-theme .rainfall-page p,
+body.light-theme .rainfall-page span {
+  color: #64748b;
+}
+
+/* Header */
+
+body.light-theme .rainfall-location {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Statistics */
+
+body.light-theme .rainfall-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .rainfall-card span {
+  color: #64748b;
+}
+
+body.light-theme .rainfall-card strong {
+  color: #0f172a;
+}
+
+body.light-theme .rainfall-card small {
+  color: #64748b;
+}
+
+body.light-theme .rainfall-card p {
+  color: #64748b;
+}
+
+/* Chart panel */
+
+body.light-theme .rainfall-chart-panel,
+body.light-theme .forecast-panel,
+body.light-theme .stations-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .panel-heading h2 {
+  color: #0f172a;
+}
+
+body.light-theme .panel-heading p {
+  color: #64748b;
+}
+
+body.light-theme .panel-heading select {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+/* Chart */
+
+body.light-theme .chart-y span,
+body.light-theme .chart-x span {
+  color: #64748b;
+}
+
+body.light-theme .chart-grid {
+  opacity: 0.5;
+}
+
+/* Forecast */
+
+body.light-theme .forecast-panel h2 {
+  color: #0f172a;
+}
+
+body.light-theme .forecast-subtitle {
+  color: #64748b;
+}
+
+body.light-theme .forecast-item {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .forecast-item span {
+  color: #475569;
+}
+
+body.light-theme .forecast-item strong {
+  color: #0f172a;
+}
+
+/* Stations */
+
+body.light-theme .station-row {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .station-row span {
+  color: #475569;
+}
+
+body.light-theme .station-header span {
+  color: #64748b;
+}

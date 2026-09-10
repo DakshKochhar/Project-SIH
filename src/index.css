@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #020617;
+  color: white;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+body.light-theme {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Common page background */
+
+body.light-theme .page,
+body.light-theme .dashboard-page,
+body.light-theme .home-page {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Common cards */
+
+body.light-theme .card {
+  background: white;
+  color: #0f172a;
+  border-color: #e2e8f0;
+}
+
+/* Common headings */
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4 {
+  color: #0f172a;
+}
+
+/* Common paragraphs */
+
+body.light-theme p {
+  color: #64748b;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+}

@@ -1,0 +1,320 @@
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  position: fixed;
+
+  left: 0;
+  top: 70px;
+
+  width: 230px;
+  height: calc(100vh - 70px);
+
+  padding: 18px 12px 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(2, 6, 23, 0.94);
+
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(18px);
+
+  z-index: 900;
+
+  overflow-y: auto;
+}
+
+
+/* ================================
+   MENU
+================================ */
+
+.sidebar-menu {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.sidebar-item {
+  width: 100%;
+
+  min-height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 9px 12px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #64748b;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.sidebar-item:hover {
+  color: #cbd5e1;
+
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.sidebar-item.active {
+  color: #60a5fa;
+
+  background: rgba(37, 99, 235, 0.16);
+
+  border-left: 2px solid #3b82f6;
+}
+
+
+/* ================================
+   ICON
+================================ */
+
+.sidebar-icon {
+  width: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 15px;
+}
+
+.sidebar-text {
+  white-space: nowrap;
+
+  font-weight: 500;
+}
+
+
+/* ================================
+   SYSTEM STATUS
+================================ */
+
+.system-status {
+  margin-top: auto;
+
+  padding: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 10px;
+
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.system-status h4 {
+  margin-bottom: 10px;
+
+  color: #cbd5e1;
+
+  font-size: 11px;
+}
+
+.status-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #22c55e;
+
+  font-size: 10px;
+
+  margin-bottom: 12px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.7);
+}
+
+.system-status p {
+  margin-top: 9px;
+
+  margin-bottom: 3px;
+
+  color: #475569;
+
+  font-size: 8px;
+}
+
+.system-status strong {
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+.data-sources {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  line-height: 1.6;
+}
+
+
+/* ================================
+   MOBILE APP
+================================ */
+
+.mobile-app-btn {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 9px 6px;
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+
+  border-radius: 8px;
+
+  background: rgba(37, 99, 235, 0.08);
+
+  color: #60a5fa;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.mobile-app-btn:hover {
+  background: rgba(37, 99, 235, 0.15);
+}
+
+
+/* ================================
+   SCROLLBAR
+================================ */
+
+.sidebar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+
+  border-radius: 10px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    display: none;
+  }
+}
+/* =========================================
+   LIGHT THEME - SIDEBAR
+   ========================================= */
+
+body.light-theme .sidebar {
+  background: #ffffff;
+  border-right-color: #e2e8f0;
+  box-shadow: 2px 0 15px rgba(15, 23, 42, 0.05);
+}
+
+/* Menu items */
+
+body.light-theme .sidebar-item {
+  color: #64748b;
+}
+
+body.light-theme .sidebar-item:hover {
+  background: #f1f5f9;
+  color: #2563eb;
+}
+
+body.light-theme .sidebar-item.active {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+body.light-theme .sidebar-icon {
+  color: inherit;
+}
+
+body.light-theme .sidebar-text {
+  color: inherit;
+}
+
+/* System status */
+
+body.light-theme .system-status {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .system-status h4 {
+  color: #0f172a;
+}
+
+body.light-theme .system-status p {
+  color: #64748b;
+}
+
+body.light-theme .system-status strong {
+  color: #0f172a;
+}
+
+body.light-theme .system-status .status-line span:last-child {
+  color: #16a34a;
+}
+
+body.light-theme .data-sources {
+  color: #64748b;
+}
+
+/* Mobile app button */
+
+body.light-theme .mobile-app-btn {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+
+body.light-theme .mobile-app-btn:hover {
+  background: #dbeafe;
+}

@@ -1,0 +1,660 @@
+/* ================================
+   ALERTS PAGE
+================================ */
+
+.alerts-page {
+  margin-left: 230px;
+  padding: 95px 30px 40px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.10),
+      transparent 30%
+    ),
+    #020617;
+
+  color: white;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.alerts-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.alerts-header h1 {
+  font-size: 27px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 7px;
+}
+
+.alerts-header p {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.alerts-location {
+  padding: 9px 14px;
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 8px;
+
+  background: rgba(15, 23, 42, 0.65);
+
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+
+/* ================================
+   ALERT STAT CARDS
+================================ */
+
+.alert-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.alert-stat-card {
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background: rgba(15, 23, 42, 0.68);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15);
+
+  transition: 0.25s;
+}
+
+.alert-stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(59, 130, 246, 0.22);
+
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.alert-stat-card span {
+  display: block;
+  color: #64748b;
+  font-size: 10px;
+  margin-bottom: 9px;
+}
+
+.alert-stat-card strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.alert-stat-card p {
+  color: #475569;
+  font-size: 9px;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.alerts-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+}
+
+
+/* ================================
+   ALERT LIST PANEL
+================================ */
+
+.alerts-list-panel {
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 11px;
+
+  background: rgba(15, 23, 42, 0.65);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+
+/* Panel Heading */
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+  color: #e2e8f0;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.panel-heading p {
+  color: #475569;
+  font-size: 9px;
+}
+
+.panel-heading select {
+  padding: 8px 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #0b1424;
+  color: #94a3b8;
+
+  font-size: 9px;
+  cursor: pointer;
+}
+
+
+/* ================================
+   ALERT ITEM
+================================ */
+
+.alert-item {
+  display: flex;
+  gap: 13px;
+
+  padding: 15px 4px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.alert-item:last-child {
+  border-bottom: none;
+}
+
+
+/* Severity Icon */
+
+.alert-severity {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.critical-alert .alert-severity {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.high-alert .alert-severity {
+  background: rgba(249, 115, 22, 0.12);
+  color: #fb923c;
+}
+
+.medium-alert .alert-severity {
+  background: rgba(234, 179, 8, 0.12);
+  color: #facc15;
+}
+
+
+/* Alert Details */
+
+.alert-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 5px;
+}
+
+.alert-title-row h3 {
+  color: #cbd5e1;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.alert-details > p {
+  color: #64748b;
+  font-size: 9px;
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+
+/* Severity Badge */
+
+.severity-badge {
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.severity-badge.critical {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.10);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.severity-badge.high {
+  color: #fb923c;
+  background: rgba(249, 115, 22, 0.10);
+  border: 1px solid rgba(249, 115, 22, 0.15);
+}
+
+.severity-badge.medium {
+  color: #facc15;
+  background: rgba(234, 179, 8, 0.10);
+  border: 1px solid rgba(234, 179, 8, 0.15);
+}
+
+
+/* Alert Meta */
+
+.alert-meta {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 8px;
+}
+
+.alert-meta span {
+  color: #475569;
+  font-size: 8px;
+}
+
+
+/* ================================
+   RIGHT SIDEBAR
+================================ */
+
+.alerts-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* ================================
+   ALERT SETTINGS
+================================ */
+
+.alert-settings-card {
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.alert-settings-card h3 {
+  color: #cbd5e1;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.alert-settings-card > p {
+  color: #475569;
+  font-size: 9px;
+  line-height: 1.5;
+
+  margin-bottom: 15px;
+}
+
+.alert-settings-card label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 9px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+  color: #94a3b8;
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.alert-settings-card label:last-child {
+  border-bottom: none;
+}
+
+.alert-settings-card input {
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+
+
+/* ================================
+   EMERGENCY RESPONSE
+================================ */
+
+.emergency-card {
+  display: flex;
+  gap: 12px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.10),
+      rgba(15, 23, 42, 0.75)
+    );
+}
+
+.emergency-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: rgba(59, 130, 246, 0.12);
+
+  color: #60a5fa;
+  font-size: 16px;
+}
+
+.emergency-card h3 {
+  color: #cbd5e1;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.emergency-card p {
+  color: #64748b;
+  font-size: 9px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.emergency-card button {
+  border: none;
+  background: transparent;
+
+  color: #60a5fa;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.emergency-card button:hover {
+  color: #93c5fd;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+
+  .alerts-content {
+    grid-template-columns: 1fr;
+  }
+
+  .alerts-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .alerts-page {
+    margin-left: 0;
+    padding: 90px 20px 30px;
+  }
+
+  .alert-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alerts-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .alert-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .alerts-sidebar {
+    display: flex;
+  }
+
+  .alerts-list-panel {
+    padding: 15px;
+  }
+
+  .panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .panel-heading select {
+    width: 100%;
+  }
+
+  .alert-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+}
+/* =========================================
+   LIGHT THEME - ALERTS
+   ========================================= */
+
+body.light-theme .alerts-page {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+body.light-theme .alerts-page h1,
+body.light-theme .alerts-page h2,
+body.light-theme .alerts-page h3 {
+  color: #0f172a;
+}
+
+body.light-theme .alerts-page p,
+body.light-theme .alerts-page span {
+  color: #64748b;
+}
+
+/* Header */
+
+body.light-theme .alerts-location {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Alert summary cards */
+
+body.light-theme .alert-stat-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .alert-stat-card span {
+  color: #64748b;
+}
+
+body.light-theme .alert-stat-card strong {
+  color: #0f172a;
+}
+
+body.light-theme .alert-stat-card p {
+  color: #64748b;
+}
+
+/* Alert list */
+
+body.light-theme .alerts-list-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .panel-heading h2 {
+  color: #0f172a;
+}
+
+body.light-theme .panel-heading p {
+  color: #64748b;
+}
+
+body.light-theme .panel-heading select {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+/* Alert items */
+
+body.light-theme .alert-item {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .alert-details h3 {
+  color: #0f172a;
+}
+
+body.light-theme .alert-details p {
+  color: #64748b;
+}
+
+body.light-theme .alert-meta span {
+  color: #64748b;
+}
+
+/* Severity badges */
+
+body.light-theme .severity-badge.critical {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+body.light-theme .severity-badge.high {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #ea580c;
+}
+
+body.light-theme .severity-badge.medium {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #ca8a04;
+}
+
+/* Right sidebar */
+
+body.light-theme .alert-settings-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .alert-settings-card h3 {
+  color: #0f172a;
+}
+
+body.light-theme .alert-settings-card p {
+  color: #64748b;
+}
+
+body.light-theme .alert-settings-card label {
+  color: #475569;
+}
+
+/* Emergency card */
+
+body.light-theme .emergency-card {
+  background: #fffbeb;
+  border-color: #fde68a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+body.light-theme .emergency-card h3 {
+  color: #92400e;
+}
+
+body.light-theme .emergency-card p {
+  color: #92400e;
+}
+
+body.light-theme .emergency-card button {
+  background: #ffffff;
+  border-color: #fcd34d;
+  color: #92400e;
+}

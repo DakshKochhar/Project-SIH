@@ -1,0 +1,841 @@
+/* ================================
+   ANALYTICS PAGE
+================================ */
+
+.analytics-page {
+  margin-left: 230px;
+  padding: 95px 30px 40px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.10),
+      transparent 30%
+    ),
+    #020617;
+
+  color: white;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.analytics-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.analytics-header h1 {
+  color: #f8fafc;
+  font-size: 27px;
+  margin-bottom: 7px;
+}
+
+.analytics-header p {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.analytics-location {
+  padding: 9px 14px;
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 8px;
+
+  background: rgba(15, 23, 42, 0.65);
+
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+
+/* ================================
+   FILTERS
+================================ */
+
+.analytics-filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+
+  padding: 15px 17px;
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-group label {
+  color: #64748b;
+  font-size: 8px;
+}
+
+.filter-group select {
+  min-width: 170px;
+
+  padding: 9px 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #0b1424;
+  color: #94a3b8;
+
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.analytics-filter-btn {
+  padding: 9px 15px;
+
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 7px;
+
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.analytics-filter-btn:hover {
+  background: rgba(37, 99, 235, 0.25);
+}
+
+
+/* ================================
+   STATISTICS
+================================ */
+
+.analytics-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.analytics-stat-card {
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background: rgba(15, 23, 42, 0.68);
+
+  transition: 0.25s;
+}
+
+.analytics-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.22);
+}
+
+.analytics-stat-card span {
+  display: block;
+
+  color: #64748b;
+  font-size: 10px;
+
+  margin-bottom: 8px;
+}
+
+.analytics-stat-card strong {
+  display: block;
+
+  color: #f8fafc;
+  font-size: 23px;
+
+  margin-bottom: 5px;
+}
+
+.analytics-stat-card p {
+  color: #475569;
+  font-size: 9px;
+}
+
+
+/* ================================
+   CHART CONTENT
+================================ */
+
+.analytics-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.analytics-chart-panel,
+.risk-history-panel,
+.events-panel {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 11px;
+
+  background: rgba(15, 23, 42, 0.65);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Chart Panel */
+
+.analytics-chart-panel {
+  padding: 20px;
+}
+
+.analytics-chart-panel .panel-heading {
+  margin-bottom: 20px;
+}
+
+
+/* ================================
+   CHART
+================================ */
+
+.analytics-chart {
+  height: 270px;
+
+  display: flex;
+
+  padding-top: 5px;
+}
+
+.chart-y-axis {
+  width: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 2px 0 27px;
+
+  color: #475569;
+  font-size: 8px;
+  text-align: right;
+}
+
+.chart-main {
+  position: relative;
+
+  flex: 1;
+
+  height: 100%;
+
+  margin-left: 10px;
+}
+
+.analytics-grid {
+  position: absolute;
+  inset: 0 0 28px 0;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(148, 163, 184, 0.07) 0,
+      rgba(148, 163, 184, 0.07) 1px,
+      transparent 1px,
+      transparent 16.66%
+    );
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* Bars */
+
+.analytics-bars {
+  position: absolute;
+
+  left: 10px;
+  right: 10px;
+  bottom: 29px;
+  top: 8px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  gap: 14px;
+}
+
+.analytics-bar {
+  position: relative;
+
+  width: 9%;
+
+  min-width: 22px;
+  max-width: 48px;
+
+  border-radius: 5px 5px 0 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(37, 99, 235, 0.45),
+    rgba(59, 130, 246, 0.85)
+  );
+
+  transition: 0.25s;
+}
+
+.analytics-bar:hover {
+  filter: brightness(1.2);
+  transform: scaleX(1.08);
+}
+
+.analytics-bar.active {
+  background: linear-gradient(
+    to top,
+    rgba(34, 211, 238, 0.55),
+    rgba(96, 165, 250, 0.95)
+  );
+}
+
+.analytics-bar span {
+  position: absolute;
+
+  left: 50%;
+  top: -18px;
+
+  transform: translateX(-50%);
+
+  color: #64748b;
+  font-size: 8px;
+
+  white-space: nowrap;
+}
+
+
+/* X Axis */
+
+.chart-x-axis {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-around;
+
+  color: #475569;
+  font-size: 8px;
+}
+
+
+/* ================================
+   RISK HISTORY
+================================ */
+
+.risk-history-panel {
+  padding: 20px;
+}
+
+.risk-history-panel h2 {
+  color: #e2e8f0;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.panel-subtitle {
+  color: #475569;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* Circle */
+
+.risk-history-circle {
+  width: 135px;
+  height: 135px;
+
+  margin: 22px auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 10px solid rgba(59, 130, 246, 0.15);
+
+  box-shadow:
+    inset 0 0 25px rgba(37, 99, 235, 0.08),
+    0 0 25px rgba(37, 99, 235, 0.05);
+}
+
+.risk-history-circle strong {
+  color: #e2e8f0;
+  font-size: 29px;
+}
+
+.risk-history-circle span {
+  margin-top: 3px;
+
+  color: #64748b;
+  font-size: 8px;
+}
+
+
+/* Risk List */
+
+.risk-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.risk-history-list > div {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+
+  align-items: center;
+  gap: 8px;
+
+  color: #64748b;
+  font-size: 9px;
+}
+
+.risk-history-list strong {
+  color: #cbd5e1;
+  font-size: 9px;
+}
+
+.history-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.history-dot.low {
+  background: #22c55e;
+}
+
+.history-dot.medium {
+  background: #eab308;
+}
+
+.history-dot.high {
+  background: #f97316;
+}
+
+.history-dot.critical {
+  background: #ef4444;
+}
+
+
+/* ================================
+   EVENTS TABLE
+================================ */
+
+.events-panel {
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.events-panel .panel-heading {
+  margin-bottom: 15px;
+}
+
+.event-row {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.5fr
+    1fr
+    0.8fr
+    0.8fr;
+
+  align-items: center;
+
+  min-height: 43px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.event-row:last-child {
+  border-bottom: none;
+}
+
+.event-header {
+  color: #475569;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-row b {
+  width: fit-content;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  font-size: 8px;
+}
+
+.event-critical {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.10);
+}
+
+.event-high {
+  color: #fb923c;
+  background: rgba(249, 115, 22, 0.10);
+}
+
+.event-medium {
+  color: #facc15;
+  background: rgba(234, 179, 8, 0.10);
+}
+
+
+/* ================================
+   INSIGHTS
+================================ */
+
+.analytics-insights {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 18px 20px;
+
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.09),
+      rgba(15, 23, 42, 0.7)
+    );
+}
+
+.analytics-insights span {
+  color: #3b82f6;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.analytics-insights h3 {
+  color: #cbd5e1;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.analytics-insights p {
+  max-width: 480px;
+
+  color: #64748b;
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+
+  .analytics-content {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-history-panel {
+    min-height: 350px;
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .analytics-page {
+    margin-left: 0;
+    padding: 90px 20px 30px;
+  }
+
+  .analytics-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .analytics-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analytics-filters {
+    flex-wrap: wrap;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .analytics-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group select,
+  .analytics-filter-btn {
+    width: 100%;
+  }
+
+  .analytics-chart {
+    height: 230px;
+  }
+
+  .event-row {
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 8px;
+  }
+
+  .event-row span:nth-child(4),
+  .event-row span:nth-child(5),
+  .event-row b {
+    display: none;
+  }
+
+  .analytics-insights {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+/* =========================================
+   LIGHT THEME - ANALYTICS
+   ========================================= */
+
+body.light-theme .analytics-page {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+body.light-theme .analytics-page h1,
+body.light-theme .analytics-page h2,
+body.light-theme .analytics-page h3 {
+  color: #0f172a;
+}
+
+body.light-theme .analytics-page p,
+body.light-theme .analytics-page span {
+  color: #64748b;
+}
+
+/* Header */
+
+body.light-theme .analytics-location {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Filters */
+
+body.light-theme .analytics-filters {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .filter-group label {
+  color: #475569;
+}
+
+body.light-theme .filter-group select {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+body.light-theme .analytics-filter-btn {
+  color: #ffffff;
+}
+
+/* Statistics */
+
+body.light-theme .analytics-stat-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .analytics-stat-card span {
+  color: #64748b;
+}
+
+body.light-theme .analytics-stat-card strong {
+  color: #0f172a;
+}
+
+body.light-theme .analytics-stat-card p {
+  color: #64748b;
+}
+
+/* Rainfall chart */
+
+body.light-theme .analytics-chart-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .analytics-chart-panel .panel-heading h2 {
+  color: #0f172a;
+}
+
+body.light-theme .analytics-chart-panel .panel-heading p {
+  color: #64748b;
+}
+
+body.light-theme .chart-y-axis span,
+body.light-theme .chart-x-axis span {
+  color: #64748b;
+}
+
+body.light-theme .analytics-grid {
+  opacity: 0.5;
+}
+
+/* Flood risk history */
+
+body.light-theme .risk-history-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .risk-history-panel h2 {
+  color: #0f172a;
+}
+
+body.light-theme .risk-history-panel .panel-subtitle {
+  color: #64748b;
+}
+
+body.light-theme .risk-history-circle {
+  background: #ffffff;
+  border-color: #dbeafe;
+}
+
+body.light-theme .risk-history-circle strong {
+  color: #0f172a;
+}
+
+body.light-theme .risk-history-circle span {
+  color: #64748b;
+}
+
+body.light-theme .risk-history-list > div {
+  color: #475569;
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .risk-history-list > div > span:not(.history-dot) {
+  color: #475569;
+}
+
+body.light-theme .risk-history-list strong {
+  color: #0f172a;
+}
+
+/* Historical events */
+
+body.light-theme .events-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .events-panel .panel-heading h2 {
+  color: #0f172a;
+}
+
+body.light-theme .events-panel .panel-heading p {
+  color: #64748b;
+}
+
+body.light-theme .event-row {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .event-row span {
+  color: #475569;
+}
+
+body.light-theme .event-header span {
+  color: #64748b;
+}
+
+body.light-theme .event-critical {
+  color: #dc2626;
+}
+
+body.light-theme .event-high {
+  color: #ea580c;
+}
+
+body.light-theme .event-medium {
+  color: #ca8a04;
+}
+
+/* Insights */
+
+body.light-theme .analytics-insights {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #0f172a;
+}
+
+body.light-theme .analytics-insights > div > span {
+  color: #2563eb;
+}
+
+body.light-theme .analytics-insights h3 {
+  color: #0f172a;
+}
+
+body.light-theme .analytics-insights > p {
+  color: #475569;
+}

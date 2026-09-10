@@ -1,0 +1,742 @@
+/* =================================
+   DRAINAGE MONITOR PAGE
+================================= */
+
+.drainage-page {
+  margin-left: 230px;
+  padding: 95px 30px 40px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 75% 10%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    #020617;
+
+  color: #e2e8f0;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.drainage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.drainage-header h1 {
+  margin-bottom: 6px;
+  color: #f8fafc;
+  font-size: 26px;
+}
+
+.drainage-header p {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.drainage-location {
+  padding: 9px 14px;
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 8px;
+
+  background: rgba(15, 23, 42, 0.7);
+
+  color: #60a5fa;
+  font-size: 11px;
+}
+
+
+/* =================================
+   STATISTICS
+================================= */
+
+.drainage-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.drainage-stat-card {
+  min-height: 110px;
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.95),
+      rgba(8, 15, 30, 0.9)
+    );
+
+  transition: 0.25s;
+}
+
+.drainage-stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.drainage-stat-card span {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #64748b;
+  font-size: 10px;
+}
+
+.drainage-stat-card strong {
+  display: block;
+
+  color: #f8fafc;
+  font-size: 28px;
+}
+
+.drainage-stat-card p {
+  margin-top: 6px;
+
+  color: #60a5fa;
+  font-size: 9px;
+}
+
+
+/* =================================
+   MAIN CONTENT
+================================= */
+
+.drainage-content {
+  display: grid;
+
+  grid-template-columns: minmax(0, 2fr) minmax(270px, 0.8fr);
+
+  gap: 18px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =================================
+   TABLE PANEL
+================================= */
+
+.drainage-table-panel,
+.drainage-side-card,
+.flow-panel,
+.drainage-alert {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.95),
+      rgba(8, 15, 30, 0.92)
+    );
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.drainage-table-panel {
+  overflow: hidden;
+}
+
+
+/* =================================
+   PANEL HEADING
+================================= */
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.panel-heading h2 {
+  margin-bottom: 4px;
+
+  color: #f8fafc;
+  font-size: 14px;
+}
+
+.panel-heading p {
+  color: #64748b;
+  font-size: 9px;
+}
+
+.panel-heading select {
+  padding: 7px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #0f172a;
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+
+/* =================================
+   DRAINAGE TABLE
+================================= */
+
+.drain-row {
+  display: grid;
+
+  grid-template-columns:
+    0.65fr
+    1.4fr
+    1fr
+    1fr
+    0.9fr;
+
+  align-items: center;
+
+  padding: 14px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+.drain-row:last-child {
+  border-bottom: none;
+}
+
+.drain-header {
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #475569;
+
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.drain-row b {
+  width: fit-content;
+
+  padding: 4px 8px;
+
+  border-radius: 5px;
+
+  font-size: 8px;
+}
+
+.status-critical {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+.status-high {
+  background: rgba(249, 115, 22, 0.1);
+  color: #fb923c;
+}
+
+.status-normal {
+  background: rgba(34, 197, 94, 0.08);
+  color: #4ade80;
+}
+
+
+/* =================================
+   RIGHT SIDEBAR
+================================= */
+
+.drainage-side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.drainage-side-card {
+  padding: 18px;
+}
+
+.drainage-side-card h3 {
+  margin-bottom: 18px;
+
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+
+/* =================================
+   CAPACITY CIRCLE
+================================= */
+
+.capacity-circle {
+  width: 130px;
+  height: 130px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 5px auto 18px;
+
+  border-radius: 50%;
+
+  border: 10px solid rgba(59, 130, 246, 0.14);
+
+  box-shadow:
+    0 0 25px rgba(37, 99, 235, 0.1);
+}
+
+.capacity-circle strong {
+  color: #60a5fa;
+  font-size: 28px;
+}
+
+.capacity-circle span {
+  margin-top: 4px;
+
+  color: #64748b;
+  font-size: 8px;
+}
+
+.drainage-side-card > p {
+  color: #64748b;
+
+  font-size: 9px;
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+
+/* =================================
+   CRITICAL DRAINS
+================================= */
+
+.critical-drain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.critical-drain:last-child {
+  border-bottom: none;
+}
+
+.critical-drain div strong {
+  display: block;
+
+  color: #cbd5e1;
+  font-size: 10px;
+}
+
+.critical-drain div span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #475569;
+  font-size: 8px;
+}
+
+.critical-drain > b {
+  color: #f87171;
+  font-size: 11px;
+}
+
+
+/* =================================
+   ALERT
+================================= */
+
+.drainage-alert {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  border-left: 2px solid #f97316;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(249, 115, 22, 0.06),
+      rgba(15, 23, 42, 0.9)
+    );
+}
+
+.alert-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 7px;
+
+  background: rgba(249, 115, 22, 0.1);
+
+  color: #fb923c;
+
+  font-size: 15px;
+}
+
+.drainage-alert h3 {
+  margin-bottom: 5px;
+
+  color: #cbd5e1;
+  font-size: 10px;
+}
+
+.drainage-alert p {
+  color: #64748b;
+
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+
+/* =================================
+   FLOW MONITORING
+================================= */
+
+.flow-panel {
+  overflow: hidden;
+}
+
+.flow-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+
+  padding: 18px;
+}
+
+.flow-card {
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.flow-card > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #64748b;
+  font-size: 9px;
+}
+
+.flow-card strong {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #e2e8f0;
+  font-size: 17px;
+}
+
+.flow-bar {
+  width: 100%;
+  height: 5px;
+
+  margin-bottom: 7px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.flow-bar span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #22d3ee
+    );
+}
+
+.flow-card small {
+  color: #475569;
+  font-size: 8px;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1100px) {
+
+  .drainage-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .drainage-content {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .drainage-page {
+    margin-left: 0;
+
+    padding: 90px 18px 30px;
+  }
+
+  .drainage-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .drainage-table-panel {
+    overflow-x: auto;
+  }
+
+  .drainage-table {
+    min-width: 650px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .drainage-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drainage-header h1 {
+    font-size: 22px;
+  }
+
+}
+/* =========================================
+   LIGHT THEME - DRAINAGE
+   ========================================= */
+
+body.light-theme .drainage-page {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+body.light-theme .drainage-page h1,
+body.light-theme .drainage-page h2,
+body.light-theme .drainage-page h3 {
+  color: #0f172a;
+}
+
+body.light-theme .drainage-page p,
+body.light-theme .drainage-page span,
+body.light-theme .drainage-page small {
+  color: #64748b;
+}
+
+/* Header */
+
+body.light-theme .drainage-location {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Statistics */
+
+body.light-theme .drainage-stat-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .drainage-stat-card span {
+  color: #64748b;
+}
+
+body.light-theme .drainage-stat-card strong {
+  color: #0f172a;
+}
+
+body.light-theme .drainage-stat-card p {
+  color: #64748b;
+}
+
+/* Main table panel */
+
+body.light-theme .drainage-table-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .panel-heading h2 {
+  color: #0f172a;
+}
+
+body.light-theme .panel-heading p {
+  color: #64748b;
+}
+
+body.light-theme .panel-heading select {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+/* Drainage table */
+
+body.light-theme .drain-row {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .drain-row span {
+  color: #475569;
+}
+
+body.light-theme .drain-header span {
+  color: #64748b;
+}
+
+/* Right side cards */
+
+body.light-theme .drainage-side-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .drainage-side-card h3 {
+  color: #0f172a;
+}
+
+body.light-theme .capacity-circle {
+  background: #ffffff;
+  border-color: #dbeafe;
+}
+
+body.light-theme .capacity-circle strong {
+  color: #0f172a;
+}
+
+body.light-theme .capacity-circle span {
+  color: #64748b;
+}
+
+body.light-theme .drainage-side-card p {
+  color: #64748b;
+}
+
+/* Critical drains */
+
+body.light-theme .critical-drain {
+  border-bottom-color: #e2e8f0;
+}
+
+body.light-theme .critical-drain strong {
+  color: #0f172a;
+}
+
+body.light-theme .critical-drain span {
+  color: #64748b;
+}
+
+/* Alert */
+
+body.light-theme .drainage-alert {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+body.light-theme .drainage-alert h3 {
+  color: #92400e;
+}
+
+body.light-theme .drainage-alert p {
+  color: #92400e;
+}
+
+/* Flow monitoring */
+
+body.light-theme .flow-panel {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+body.light-theme .flow-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-theme .flow-card span {
+  color: #64748b;
+}
+
+body.light-theme .flow-card strong {
+  color: #0f172a;
+}
+
+body.light-theme .flow-card small {
+  color: #64748b;
+}
+
+body.light-theme .flow-bar {
+  background: #e2e8f0;
+}
